@@ -35,7 +35,7 @@ app.use('/apiv1/authenticate', require('./routes/apiv1/authenticate'))
 app.use('/apiv1/anuncios', jwtAuth(), require('./routes/apiv1/anuncios'))
 
 // Global Template variables
-app.locals.title = 'Wallaclone'
+app.locals.title = 'Wallaclone - API'
 
 // Web
 app.use('/', require('./routes/index'))
