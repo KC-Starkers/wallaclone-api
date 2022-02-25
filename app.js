@@ -35,7 +35,7 @@ app.use('/apiv1/authenticate', require('./routes/apiv1/authenticate'))
 app.use('/apiv1/anuncios', jwtAuth(), require('./routes/apiv1/anuncios'))
 
 // Global Template variables
-app.locals.title = 'NodePop'
+app.locals.title = 'Wallaclone'
 
 // Web
 app.use('/', require('./routes/index'))
@@ -81,7 +81,7 @@ app.use(function (err, req, res, next) {
   res.render('error')
 })
 
-function isAPI (req) {
+function isAPI(req) {
   return req.originalUrl.indexOf('/api') === 0
 }
 
