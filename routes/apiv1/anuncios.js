@@ -51,13 +51,18 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
     await anuncio.setFoto(req.file) // save image
 
     const saved = await anuncio.save()
-    res.json({ok: true, result: saved})
+    res.json({ ok: true, result: saved })
   } catch (err) { next(err) }
 })
 
 // Return the list of available tags
 router.get('/tags', function (req, res) {
   res.json({ ok: true, allowedTags: Anuncio.allowedTags() })
+})
+
+// Return the list of available tags
+router.get('/test', function (req, res) {
+  res.json({ ok: true, message: 'Funciona el push correctamente.' })
 })
 
 module.exports = router
